@@ -6,36 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script>
       function redirectToApp() {
-        const deepLink = 'myapp://home'; // Update to your app's scheme/path
-        const playStoreLink = '<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Open My App</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script>
-      function redirectToApp() {
-        const deepLink = 'myapp://darknetdiries.bug32.com';
+        const deepLink = 'myapp://darknetdiaries.bug32.com'; // Update to your app's scheme/path
         const playStoreLink = 'https://play.google.com/store/apps/details?id=com.bug32.darknetdiaries&hl=en_IN';
-
-        // Try to open app
-        window.location.href = deepLink;
-
-        // If not opened in 2 seconds, fallback to Play Store
-        setTimeout(() => {
-          window.location.href = playStoreLink;
-        }, 2000);
-      }
-
-      window.onload = redirectToApp;
-    </script>
-  </head>
-  <body>
-    <h3>Opening the app...</h3>
-    <p>If nothing happens, you will be redirected to the Play Store.</p>
-  </body>
-</html>
-';
 
         // Try to open app
         window.location.href = deepLink;
