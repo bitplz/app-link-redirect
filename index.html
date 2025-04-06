@@ -5,14 +5,19 @@
     <title>Open My App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script>
+      function getDeepLinkFromURL() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get("link");
+      }
+
       function redirectToApp() {
-        const deepLink = 'myapp://darknetdiaries.bug32.com'; // Update to your app's scheme/path
+        const deepLink = getDeepLinkFromURL() || 'myapp://darknetdiaries.bug32.com';
         const playStoreLink = 'https://play.google.com/store/apps/details?id=com.bug32.darknetdiaries&hl=en_IN';
 
-        // Try to open app
+        // Try to open the deep link
         window.location.href = deepLink;
 
-        // If not opened in 2 seconds, fallback to Play Store
+        // Fallback to Play Store after delay
         setTimeout(() => {
           window.location.href = playStoreLink;
         }, 2000);
